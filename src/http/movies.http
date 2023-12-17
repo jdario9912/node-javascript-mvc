@@ -1,0 +1,4 @@
+@urlBase = http://localhost:3000/api/movies
+
+### Getting all movies
+GET {{urlBase}}
