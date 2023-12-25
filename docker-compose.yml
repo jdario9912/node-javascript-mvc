@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: ${MYSQL_CONTAINER_NAME}
+    env_file:
+      - .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "3306:3306"
+    stdin_open: true
+    tty: true
+  
+  mongo:
+    image: mongo:7.0.4
+    restart: always
+    env_file:
+      - .env
+    container_name: ${MONGO_CONTAINER_NAME}
+    ports:
+      - ${MONGO_PORT}
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}

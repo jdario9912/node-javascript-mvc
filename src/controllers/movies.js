@@ -1,4 +1,7 @@
-// aca deberian ir los models
+// aca se deberian importar los modelos de mongo o mysql
+// import MovieModel from "../models/mongo/movies.js";
+// import MovieModel from "../models/mysql/movies.js";
+
 export default class MoviesController {
   static getMovies(req, res) {
     return res.json("Getting all movies");
